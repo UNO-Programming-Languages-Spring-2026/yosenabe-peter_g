@@ -23,6 +23,6 @@ path(X,Y,X,PY) :- target(X,Y,X,YY), PY = YY..Y.  % occupy all cells in the path 
 :- path(X1,Y1,PX,PY), path(X2,Y2,PX,PY), (X1,Y1) != (X2,Y2). % disallow collisions in paths
 
 % achieved: each area goal is met
-:- #sum{ V,XX,YY : target(X,Y,XX,YY), number(X,Y,V) } != G, goal(N,G).
+:- #sum{ V,XX,YY : target(X,Y,XX,YY), number(X,Y,V), area(XX,YY,N) } != G, goal(N,G).
 
 #show target/4.
